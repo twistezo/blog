@@ -1,0 +1,7 @@
+author: Łukasz Kółko
+title: twistezo's blog
+description: My programming cave
+baseurl: /blog
+
+sass:
+  style: compressed

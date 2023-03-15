@@ -1,0 +1,39 @@
+.wrapper {
+  max-width: 920px;
+
+  section {
+    max-width: inherit;
+  }
+}
+
+.post {
+  &__footer {
+    a,
+    p {
+      margin: 0;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+}
+
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin-top: 30px;
+  }
+}
+
+.tags {
+  margin-top: 30px;
+
+  a {
+    margin-right: 5px;
+  }
+}
