@@ -2,7 +2,7 @@
 
 Live on https://twistezo.github.io/blog/
 
-## How to build locally?
+## Build local
 
 ### Requirements
 
@@ -16,3 +16,15 @@ Live on https://twistezo.github.io/blog/
 ### Build and serve
 
 - `bundle exec jekyll serve` and go to `http://localhost:4000`
+
+## Tags
+
+This project uses [Long Qian's](https://longqian.me/2017/02/09/github-jekyll-tag/) method to generate tags in Jekyll.
+
+### Requirements
+
+- Python 3
+
+### Usage
+
+- `python3 generate_tags.py`

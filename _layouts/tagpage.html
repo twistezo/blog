@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="orange">
+  <h2 class="title">Tag: #{{ page.tag }}</h2>
+</div>
+
+<ul>
+  {% for post in site.tags[page.tag] %}
+  <li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <p>{{ post.date | date: '%Y-%m-%d ' }}</p>
+  </li>
+  {% endfor %}
+</ul>

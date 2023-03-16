@@ -12,7 +12,16 @@ colorspace: green # [cyan/green/orange/pink/purple/red/yellow]
 </ul>
 
 <div class="tags orange">
-  {% for tag in site.tags %}
-    <a href="{{ site.baseurl }}{{ tag.url }}">#{{ tag[0] }}</a>
+  {% capture temptags %}
+    {% for tag in site.tags %}
+      {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+    {% endfor %}
+  {% endcapture %}
+
+  {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+  {% for temptag in sortedtemptags %}
+    {% assign tagitems = temptag | split: '#' %}
+    {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
+    <a href="{{ site.baseurl }}/tag/{{ tagname }}">#{{ tagname }}</a>
   {% endfor %}
 </div>

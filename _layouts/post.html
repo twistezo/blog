@@ -4,6 +4,14 @@ layout: default
 
 {{ content }}
 
+<div class="post__tags">
+  {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
+  <a href="{{ site.baseurl }}/tag/{{ tag_name }}"
+    ><code>#{{ tag_name }}</code></a
+  >
+  {% endfor %}
+</div>
+
 <div class="post__footer">
   <a href="{{ site.baseurl }}/" class="button">Go back</a>
   <p>{{ site.author }}, {{ page.date | date: '%Y-%m-%d ' }}</p>
