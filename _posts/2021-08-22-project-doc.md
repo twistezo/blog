@@ -1,8 +1,8 @@
 ---
 layout: post
-title: A few words about proper project documentation
+title: What should good project documentation look like?
 date: 2021-08-22
-tags: [documentation]
+tags: [documentation, scrum]
 ---
 
 # Table of Contents
@@ -48,7 +48,7 @@ tags: [documentation]
 6.  [How to evaluate project documentation](#how-to-evaluate-project-documentation)
 7.  [Examples](#examples)
 
-# What will we gain from a well-documented project?
+## What will we gain from a well-documented project?
 
 The purpose of creating good project documentation is:
 
@@ -68,7 +68,7 @@ The purpose of creating good project documentation is:
 
   Having easy access to clear and concise documentation and having a history of changes to these documents, communication with the customer becomes more effective.
 
-# Forms of documentation
+## Forms of documentation
 
 Documentation can take many forms. It can be:
 
@@ -79,9 +79,9 @@ Documentation can take many forms. It can be:
 - mockup
 - video
 
-# What should good project documentation look like?
+## What should good project documentation look like?
 
-## Main doc - all information available from one place
+### Main doc - all information available from one place
 
 It is worth choosing one place and try to put as much documentation as possible in it. If the documentation is distributed we try to keep references to the distributed elements. For example, place for main document can be the file README.md and the Wiki section on GitHub or Atlassian Confluence.
 
@@ -163,7 +163,7 @@ All chapter should be H2 header e.g. `## Business Domain`
 ## Other stuff
 ```
 
-## Various types of documentation
+### Various types of documentation
 
 More complex projects due to different roles in the team may require documentation appropriate for their area.
 
@@ -185,7 +185,7 @@ We try to arrange the documentation so that each area is easily accessible and u
 
 **The documentation for all below parts, should contain a brief description and if necessary reasons for the decisions made.**
 
-## Business domain
+### Business domain
 
 When creating business documentation, it is worth choosing tools that have the following features:
 
@@ -204,7 +204,7 @@ The business domain description should contain all necessary information for the
 - project roadmap (link from Jira, Productboard etc.)
 - all necessary information about business domain
 
-## Team
+### Team
 
 All roles and responsibilities in the team should be written down, preferably to our main document.
 
@@ -223,7 +223,7 @@ John Smith
 
 The recommended tools are Google Docs, Google Spreadsheets and GitHub (Readme, Wiki).
 
-## Scrum process
+### Scrum process
 
 The scrum process used in the project should be written down, preferably to our main document.
 
@@ -241,7 +241,7 @@ Scrum process
 
 The recommended tools are Google Docs and GitHub (Readme, Wiki).
 
-## Workflow
+### Workflow
 
 The workflow should be written down, preferably to our main document.
 
@@ -267,7 +267,7 @@ GitHub
 
 The recommended tools are Google Docs and GitHub (Readme, Wiki).
 
-## Communication in the project
+### Communication in the project
 
 It is worth knowing what tools we use to communicate in the team or outside of it in the project. These can be slack channels, developer test accounts, team emails, number to customer phone etc.
 
@@ -292,7 +292,7 @@ Phones for urgent situations:
 - 777 888 999 - John Smith - Product Owner
 ```
 
-## Interface and user experience
+### Interface and user experience
 
 It is worth creating a text document that will help you understand the decisions made at the planning stage, the way you work, how the mock-ups are cataloged, how to cooperate and how we version changes. What resolutions does the application support, is it responsive, do we have a mobile version or support the disabled, etc.
 
@@ -310,19 +310,19 @@ When creating UI/UX documentation, it is worth choosing tools that have the foll
 
 The recommended tools are Figma and Adobe XD.
 
-## Architecture
+### Architecture
 
 If the architecture is distributed or complex, the documentation should be broader and preferably as block diagrams. We need a clear understanding of the information flow, the connections between the various components, the tools and technologies used.
 
-## Databases
+### Databases
 
 A brief description of the databases used. Description or diagram of connections between the bases or their elements. Ability to generate documentation or database schema.
 
-## API
+### API
 
 We should be able to generate API documentation to a clear and readable form. For this purpose, you can use, for example the Swagger UI, Postman or similar tool, which is sometimes built into individual libraries. Documentation should be generated in such a way that reading it does not force you to go deep into other technologies. In other words, API documentation should be exposed externally.
 
-## CI and CD
+### CI and CD
 
 Description or block diagram of CI/CD processes in our project and the environments we use (e.g. staging, production). Well documented configuration files for the tools used, e.g. CircleCI, Terraform.
 
@@ -330,17 +330,17 @@ In the Continuous Integration process, we should focus on the description of the
 
 In the Continuous Delivery process, we should focus on the description of the deliver or its individual components to appropriate environments that are located, for example, on the AWS cloud.
 
-## Cloud architecture
+### Cloud architecture
 
 If our application is hosted on one of the popular clouds, e.g. AWS, we include this information in the main document. We include information on the functionalities we use (e.g. RDS, ECS, ECR), a description of the cloud architecture, our hosting flow, maintenance information and all the other without which we are unable to work.
 
-## Error reporting
+### Error reporting
 
 Each project at some stage should have error reporting system. We most often use external tools such as Rollbar, Sentry, etc. The main document should contain information about the tool and its functionalities we use for reporting. Information whether we send error notifications from various environments, e.g. to e-mail, Slack channel.
 
 As for errors related to the use of the application, we add information about the path of reporting such an error by the developer or the end user.
 
-## Setting up the project
+### Setting up the project
 
 For the convenience of developers and smooth processes in the company, each project should strive to set up the entire development environment with one click, which allows you to start working immediately.
 
@@ -348,7 +348,7 @@ A popular solution to this problem is containerization of the project with Docke
 
 If project uses multiple environments, it likely contains ENV files. For security reasons, the project may also need to provide other files that contain sensitive data needed to run it locally. We need information on what files these are and from whom we will get them.
 
-## Code
+### Code
 
 The basic principle of documenting code is writing it in such a way that it does not require documentation. The so-called self-commenting code. In other words, we write the code in such a way that the person reading it, who does not know the logic of a given functionality, immediately knows what is going on.
 
@@ -358,17 +358,17 @@ When we create a functionality or a library that will be used by others, we try 
 
 There are ready-made solutions for generating documentation for popular programming languages. Documentation can be generated as a website, to a PDF file, etc. Many IDEs have built-in comment syntax highlighting. For example, the JSDoc library is a popular solution for JavaScript.
 
-# Do not exaggerate with the documentation
+## Do not exaggerate with the documentation
 
 When creating documentation, it is easy to overdo the amount of information. Only those things that may not be obvious to others should be documented. Only those things that will improve processes important for our project and company. You should limit the amount of information. Write briefly, clearly and concisely.
 
-# Maintaining documentation
+## Maintaining documentation
 
 Team members rotate and learn new skills. The client comes up with new functionalities and changes the current ones. The project is developing and living its own life. It is extremely important to motivate and maintain the existing documentation. Each role in the team should take care of its part of the documentation.
 
 The current documentation should be reviewed every now and then. Consider whether the current requirements and tools are still meeting their original goals. Don't be afraid to make costly changes. After a thorough analysis, it is often worth spending more time on some drastic change in the documentation, e.g. transferring it to another tool, because it can quickly pay off in the near future when it comes to maintaining documentation and project management.
 
-# How to evaluate project documentation
+## How to evaluate project documentation
 
 To make the assessment of the documentation of each project consistent, follow the tips below.
 
@@ -378,7 +378,7 @@ To make the assessment of the documentation of each project consistent, follow t
 
 Keep in mind that the place should align with the rest of the distributed docc, the tools with the others, and the requirements with the best practices and guidelines.
 
-# Examples
+## Examples
 
 1. Popular GitHub readme templates - [https://www.readme-templates.com](https://www.readme-templates.com)
 2. All about GitHub readme. Examples, tools, guides - [https://github.com/matiassingers/awesome-readme](https://github.com/matiassingers/awesome-readme)

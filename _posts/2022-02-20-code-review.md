@@ -2,7 +2,7 @@
 layout: post
 title: The right way to review code
 date: 2022-02-20
-tags: [github, code-review]
+tags: [git, github, code-review]
 ---
 
 # The right way to review code

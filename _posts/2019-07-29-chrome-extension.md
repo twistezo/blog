@@ -7,7 +7,7 @@ tags: [javascript, browser]
 
 # How to create Google Chrome Extension on example of Netflix subtitles styler
 
-# Table of Contents
+## Table of Contents
 
 1. [Prelude](#1)
 2. [The Manifest](#2)
@@ -19,7 +19,7 @@ tags: [javascript, browser]
 
 <a name="1"></a>
 
-# Prelude
+## Prelude
 
 Today we will create Google Chrome extension for manipule Netflix subtitles styles in real time. You find here informations about creating extension from scratch, some practical advices and general view on extension architecture. Or if you are not satisfied about Netflix subtitles available options or just want to quickly create some making life easier extension this article is for you.
 
@@ -39,7 +39,7 @@ Netflix by its API sends every subtitle sentence separately. It uses CSS styles 
 
 <a name="2"></a>
 
-# The Manifest
+## The Manifest
 
 Firstly we have to create the manifest file called `manifest.json`. It tells browser about the extension setup such as the UI files, background scripts and the capabilities the extension might use.
 
@@ -79,7 +79,7 @@ Chrome extensions have separate logic from UI so we need to have `background.scr
 
 <a name="3"></a>
 
-# Extension logic
+## Extension logic
 
 Firstly we have to setup `runtime.onInstalled` behaviour, remove currently rules if exists (ex. from older version) and declare function to add new rules. We use Local Storage for store settings so we can set default settings after extension installed.
 
@@ -147,7 +147,7 @@ Firstly we check that `changeInfo.status` has status `complete`. It means that t
 
 <a name="4"></a>
 
-# Extension UI
+## Extension UI
 
 To create extension popup menu with form we create three files. `popup.html` and `popup.css` with visual layer and `popup.js` with logic for communicate between menu and isolated `background.js` script.
 
@@ -191,7 +191,7 @@ Here we have simple HTML form with built-in validation - `popup.html`:
 </html>
 ```
 
-Styling this popup menu is not the goal of this article so I suggest to visit https://github.com/twistezo/netflix-subtitles-styler and copy whole `popup.css` file to your project.
+Styling this popup menu is not the goal of this article so I suggest to visit [https://github.com/twistezo/netflix-subtitles-styler](https://github.com/twistezo/netflix-subtitles-styler) and copy whole `popup.css` file to your project.
 
 UI logic - `popup.js`:
 
@@ -233,7 +233,7 @@ In above script we load settings from Local Storage and attach them to form inpu
 
 <a name="5"></a>
 
-# The script
+## The script
 
 Now it is time to create `script.js` with logic for manipulate Netflix subtitles styles.
 
@@ -298,18 +298,18 @@ Netflix works that every time when receive whole subtitle sentence it swaps only
 
 <a name="6"></a>
 
-# Time to run
+## Time to run
 
 I assume that you have not developer account in Chrome Webstore. So to run this extension go to `chrome://extensions/` in your Chrome, click `Load unpacked`, select folder with extension and that's it! Then obviously go to Netflix page for testing it.
 
 <a name="7"></a>
 
-# Conclusions
+## Conclusions
 
 As you see it is easy to start creating some making life easier extension. The most important part is to understand Google Chrome Extension divided architecture and communication between components. This subtitles styler is only simple demo of what you can do with the Chrome Extension API.
 
 Useful links:
 
-- Repository with this project https://github.com/twistezo/netflix-subtitles-styler
-- Official Google guide https://developer.chrome.com/extensions/overview
-- Chrome Extension API https://developer.chrome.com/extensions/api_index
+- Repository with this project [https://github.com/twistezo/netflix-subtitles-styler](https://github.com/twistezo/netflix-subtitles-styler)
+- Official Google guide [https://developer.chrome.com/extensions/overview](https://developer.chrome.com/extensions/overview)
+- Chrome Extension API [https://developer.chrome.com/extensions/api_index](https://developer.chrome.com/extensions/api_index)

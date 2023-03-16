@@ -53,7 +53,7 @@ Above is the infected link which originally opens a new tab with GitHub page but
 
 ## Live example
 
-https://codesandbox.io/s/targetblank-vulnerability-r8uij
+[https://codesandbox.io/s/targetblank-vulnerability-r8uij](https://codesandbox.io/s/targetblank-vulnerability-r8uij)
 
 ## Defense methods
 

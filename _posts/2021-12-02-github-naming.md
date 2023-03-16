@@ -2,7 +2,7 @@
 layout: post
 title: Github - good practices about naming and pull requests
 date: 2021-12-02
-tags: [github]
+tags: [git, github]
 ---
 
 # Github - good practices about naming and pull requests
