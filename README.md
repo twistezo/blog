@@ -28,3 +28,7 @@ This project uses [Long Qian's](https://longqian.me/2017/02/09/github-jekyll-tag
 ### Usage
 
 - `python3 generate_tags.py`
+
+### Articles in Markdown
+
+- see https://github.com/twistezo/blog/tree/main/_posts
