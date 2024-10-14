@@ -15,7 +15,7 @@ Live on https://twistezo.github.io/blog/
 
 ### Build and serve
 
-- `bundle exec jekyll serve` and go to `http://localhost:4000/blog`
+- `bundle exec jekyll serve` and go to `http://localhost:4000/blog/`
 
 ## Tags
 
