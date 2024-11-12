@@ -14,7 +14,7 @@ JavaScript is an interpreted language, not a compiled one. This means that it ne
 Each engine contains a memory heap, a call stack, an event loop, a callback queue and a WebAPI with HTTP requests, timers, events, etc., all implemented in its own way for faster and safer interpretation of the JS code.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/runtime-architecture.png" width="450"/>
+    <img src="/assets/img/runtime-architecture.png" width="450" alt=""/>
 </p>
 <p align="center">
     <em>Basic JS runtime architecture. Author: Alex Zlatkov</em>
@@ -35,7 +35,7 @@ A `call stack` is a data structure which basically records where we are in the p
 Let's write a simple code and track what's happening on the call stack.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/stack.gif" width="500"/>
+    <img src="/assets/img/stack.gif" width="500" alt=""/>
 </p>
 
 As you can see, the functions are added to the stack, executed and later deleted. It's the so-called LIFO way - Last In, First Out. Each entry in the call stack is called a `stack frame`.
@@ -59,7 +59,7 @@ and our browser or terminal freezes. Each browser, even their different versions
 Here is an example of blocking the JS thread. Let's try to read a `foo` file and a `bar` using the Node.js synchronous function `readFileSync`.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/blocking.gif" width="500"/>
+    <img src="/assets/img/blocking.gif" width="500" alt=""/>
 </p>
 
 This is a looped GIF. As you see, the JS engine waits until the first call in `readFileSync` is completed. But this will not happen because there is no `foo` file, so the second function will never be called.
@@ -69,7 +69,7 @@ This is a looped GIF. As you see, the JS engine waits until the first call in `r
 However, JS can also be non-blocking and behave as if it were multi-threaded. It means that it doesn't wait for the response of an API call, I/O events, etc., and can continue the code execution. It is possible thanks to the JS engines which use (under the hood) real multi-threading languages, like C++ (Chrome) or Rust (Firefox). They provide us with the Web API under the browser hoods or ex. I/O API under Node.js.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/callback-queue.gif" width="800"/>
+    <img src="/assets/img/callback-queue.gif" width="800" alt=""/>
 </p>
 
 In the GIF above, we can see that the first function is pushed to the call stack and `Hi` is immediately executed in the console.

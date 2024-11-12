@@ -153,7 +153,7 @@ To create extension popup menu with form we create three files. `popup.html` and
 
 Our UI goal:
 
-<img src="https://i.imgur.com/kt6CeVw.png">
+<img src="https://i.imgur.com/kt6CeVw.png" alt="">
 
 Here we have simple HTML form with built-in validation - `popup.html`:
 
