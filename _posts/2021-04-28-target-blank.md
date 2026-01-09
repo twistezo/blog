@@ -1,6 +1,6 @@
 ---
 layout: post
-title: target=_blank vulnerability
+title: "'target=_blank' Vulnerability"
 description: Reverse tabnabbing attacks exploit the target="_blank" attribute in links to redirect the parent tab to a phishing site  - summarized with AI.
 date: 2021-04-28
 tags: [browser, security]

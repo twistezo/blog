@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to create Google Chrome Extension on example of Netflix subtitles styler
+title: How To Create Google Chrome Extension On Example Of Netflix Subtitles Styler
 description: Guide on building a Chrome extension to manipulate Netflix subtitles, allowing real-time style changes using Local Storage, background scripts, and UI components - summarized with AI.
 date: 2019-07-29
 tags: [javascript, browser]
@@ -93,14 +93,14 @@ Create `background.js`:
 
 ```javascript
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.set({ vPos: 300, fSize: 24, fColor: "#FFFFFF" });
+  chrome.storage.local.set({ vPos: 300, fSize: 24, fColor: '#FFFFFF' })
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     chrome.declarativeContent.onPageChanged.addRules([
       // array with rules
-    ]);
-  });
-});
+    ])
+  })
+})
 ```
 
 Our rule goal is to disable extension button on all other domain than `netflix.com`. We create new rule with `PageStateMatcher` condition and declare `ShowPageAction` where new rule will be assigned.
@@ -120,27 +120,27 @@ The next step is add `tabs.onUpdated` listener which will execute our script whi
 
 ```javascript
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === "complete" && tab.active) {
-    chrome.storage.local.get(["vPos", "fSize", "fColor"], (data) => {
+  if (changeInfo.status === 'complete' && tab.active) {
+    chrome.storage.local.get(['vPos', 'fSize', 'fColor'], data => {
       chrome.tabs.executeScript(
         tabId,
         {
-          file: "script.js",
+          file: 'script.js',
         },
         () => {
-          const error = chrome.runtime.lastError;
-          if (error) "Error. Tab ID: " + tab.id + ": " + JSON.stringify(error);
+          const error = chrome.runtime.lastError
+          if (error) 'Error. Tab ID: ' + tab.id + ': ' + JSON.stringify(error)
 
           chrome.tabs.sendMessage(tabId, {
             vPos: data.vPos,
             fSize: data.fSize,
             fColor: data.fColor,
-          });
+          })
         }
-      );
-    });
+      )
+    })
   }
-});
+})
 ```
 
 Firstly we check that `changeInfo.status` has status `complete`. It means that the website on this tab is loaded. Then we get settings from Local Storage and declare which script should be run on current tab with `tabId`. At the end in callback we send the message with settings from UI to script.
@@ -165,11 +165,17 @@ Here we have simple HTML form with built-in validation - `popup.html`:
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="popup.css" />
+    <link
+      rel="stylesheet"
+      href="popup.css"
+    />
   </head>
   <body>
     <div class="container logo">NETFLIX SUBTITLES STYLER</div>
-    <form id="popup-form" class="container">
+    <form
+      id="popup-form"
+      class="container"
+    >
       <div class="input-info">Vertical position from bottom [px]</div>
       <input
         class="form-control"
@@ -180,10 +186,26 @@ Here we have simple HTML form with built-in validation - `popup.html`:
         max="5000"
       />
       <div class="input-info">Font size [px]</div>
-      <input id="fSize" type="number" value="" min="0" max="300" />
+      <input
+        id="fSize"
+        type="number"
+        value=""
+        min="0"
+        max="300"
+      />
       <div class="input-info">Font color [HEX]</div>
-      <input id="fColor" type="text" value="" pattern="^#[0-9A-F]{6}$" />
-      <button id="change" type="submit">Change</button>
+      <input
+        id="fColor"
+        type="text"
+        value=""
+        pattern="^#[0-9A-F]{6}$"
+      />
+      <button
+        id="change"
+        type="submit"
+      >
+        Change
+      </button>
     </form>
     <div class="container footer">&copy; twistezo, 2019</div>
     <script src="popup.js"></script>
@@ -196,37 +218,37 @@ Styling this popup menu is not the goal of this article so I suggest to visit [h
 UI logic - `popup.js`:
 
 ```javascript
-const form = document.getElementById("popup-form");
-const inputElements = ["vPos", "fSize", "fColor"];
+const form = document.getElementById('popup-form')
+const inputElements = ['vPos', 'fSize', 'fColor']
 
-chrome.storage.local.get(inputElements, (data) => {
-  inputElements.forEach((el) => {
-    document.getElementById(el).value = data[el];
-  });
-});
+chrome.storage.local.get(inputElements, data => {
+  inputElements.forEach(el => {
+    document.getElementById(el).value = data[el]
+  })
+})
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener('submit', event => {
+  event.preventDefault()
   const [vPos, fSize, fColor] = [
-    ...inputElements.map((el) => event.target[el].value),
-  ];
+    ...inputElements.map(el => event.target[el].value),
+  ]
 
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.storage.local.set({ vPos, fSize, fColor });
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    chrome.storage.local.set({ vPos, fSize, fColor })
     chrome.tabs.executeScript(
       tabs[0].id,
       {
-        file: "script.js",
+        file: 'script.js',
       },
       () => {
-        const error = chrome.runtime.lastError;
-        if (error) "Error. Tab ID: " + tab.id + ": " + JSON.stringify(error);
+        const error = chrome.runtime.lastError
+        if (error) 'Error. Tab ID: ' + tab.id + ': ' + JSON.stringify(error)
 
-        chrome.tabs.sendMessage(tabs[0].id, { vPos, fSize, fColor });
+        chrome.tabs.sendMessage(tabs[0].id, { vPos, fSize, fColor })
       }
-    );
-  });
-});
+    )
+  })
+})
 ```
 
 In above script we load settings from Local Storage and attach them to form inputs. Then we create listener to `submit` event with functions for save settings to Local Storage and send them by message to our script. As you see in every component we use Local Storage. It is caused that Chrome extension don't have its own data space so the simplest solution is to use browser local space like Local Storage. Also we often use `sendMessage` function. It's by extensions architecture - separated logic from UI.
@@ -242,7 +264,7 @@ Firstly for receiving messages with settings from extension we create `onMessage
 ```javascript
 chrome.runtime.onMessage.addListener((message, _sender, _sendResponse) => {
   // function for manipulating styles
-});
+})
 ```
 
 Then in the same file we create function for changing proper Netflix styles to our in real time.
@@ -250,48 +272,48 @@ Then in the same file we create function for changing proper Netflix styles to o
 ```javascript
 changeSubtitlesStyle = (vPos, fSize, fColor) => {
   console.log(
-    "%cnetflix-subtitles-styler : observer is working... ",
-    "color: red;"
-  );
+    '%cnetflix-subtitles-styler : observer is working... ',
+    'color: red;'
+  )
 
   callback = () => {
     // .player-timedText
-    const subtitles = document.querySelector(".player-timedtext");
+    const subtitles = document.querySelector('.player-timedtext')
     if (subtitles) {
-      subtitles.style.bottom = vPos + "px";
+      subtitles.style.bottom = vPos + 'px'
 
       // .player-timedtext > .player-timedtext-container [0]
-      const firstChildContainer = subtitles.firstChild;
+      const firstChildContainer = subtitles.firstChild
       if (firstChildContainer) {
         // .player-timedtext > .player-timedtext-container [0] > div
-        const firstChild = firstChildContainer.firstChild;
+        const firstChild = firstChildContainer.firstChild
         if (firstChild) {
-          firstChild.style.backgroundColor = "transparent";
+          firstChild.style.backgroundColor = 'transparent'
         }
 
         // .player-timedtext > .player-timedtext-container [1]
-        const secondChildContainer = firstChildContainer.nextSibling;
+        const secondChildContainer = firstChildContainer.nextSibling
         if (secondChildContainer) {
           for (const span of secondChildContainer.childNodes) {
             // .player-timedtext > .player-timedtext-container [1] > span
-            span.style.fontSize = fSize + "px";
-            span.style.fontWeight = "normal";
-            span.style.color = fColor;
+            span.style.fontSize = fSize + 'px'
+            span.style.fontWeight = 'normal'
+            span.style.color = fColor
           }
-          secondChildContainer.style.left = "0";
-          secondChildContainer.style.right = "0";
+          secondChildContainer.style.left = '0'
+          secondChildContainer.style.right = '0'
         }
       }
     }
-  };
+  }
 
-  const observer = new MutationObserver(callback);
+  const observer = new MutationObserver(callback)
   observer.observe(document.body, {
     subtree: true,
     attributes: false,
     childList: true,
-  });
-};
+  })
+}
 ```
 
 Netflix works that every time when receive whole subtitle sentence it swaps only the subtitles part of the page DOM. So we have to use observer function like `MutationObserver` which will be triggering our `changeSubtitlesStyle` function every time when the page DOM has changed. In `callback` function we see simple manipulate of styles. In commented lines you have infomations about where you can find proper styles.

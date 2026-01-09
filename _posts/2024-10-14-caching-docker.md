@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Caching Docker Compose services in GitHub Actions
+title: Caching Docker Compose Services In Github Actions
 description: Dockerized app builds with GitHub Actions using GCR or local cache for faster builds, combining GCR's broad range and local cache's speed for efficiency  - summarized with AI.
 date: 2024-10-14
 tags: [docker, dev-ops]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding the 'this' keyword in JavaScript
+title: Understanding The 'this' Keyword In Javascript
 description: In JavaScript, the 'this' keyword refers to different contexts depending on how a function is invoked, including global, object methods, constructors, and more  - summarized with AI.
 date: 2019-10-09
 tags: [javascript]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Programming principles in a nutshell
+title: Programming Principles In A Nutshell
 description: Programming principles like SOLID, DRY, KISS, and YAGNI focus on simplicity, modularity, and adaptability, emphasizing low dependencies and efficient design  - summarized with AI.
 date: 2023-09-13
 tags: [clean-code, principles]
