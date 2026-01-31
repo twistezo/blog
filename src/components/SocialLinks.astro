@@ -1,0 +1,40 @@
+---
+import type { SocialLinks } from '~/types'
+import IconGithub from '~/icons/github.svg'
+import IconLinkedin from '~/icons/linkedin.svg'
+
+interface Props {
+  socialLinks: SocialLinks
+}
+
+const { socialLinks } = Astro.props
+---
+
+<div class='flex gap-4 items-center justify-between'>
+  {
+    socialLinks.github && (
+      <a
+        href={socialLinks.github}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='social-link'
+      >
+        <span class='sr-only'>GitHub</span>
+        <IconGithub class='size-7' />
+      </a>
+    )
+  }
+  {
+    socialLinks.linkedin && (
+      <a
+        href={socialLinks.linkedin}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='social-link'
+      >
+        <span class='sr-only'>LinkedIn</span>
+        <IconLinkedin class='size-7' />
+      </a>
+    )
+  }
+</div>

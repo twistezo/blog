@@ -1,0 +1,95 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Layout from '~/layouts/Layout.astro'
+import { TagsGroup, getSortedPosts } from '~/utils'
+import { render } from 'astro:content'
+import TableOfContents from '~/components/TableOfContents.astro'
+import Tags from '~/components/Tags.astro'
+import PostInfo from '~/components/PostInfo.astro'
+import ScrollUpButton from '~/components/ScrollUpButton.astro'
+import type { Collation } from '~/types'
+import { getPostSequenceContext } from '~/utils'
+import IconChevronsLeft from '~/icons/chevrons-left.svg'
+import siteConfig from '~/site.config'
+
+export const getStaticPaths = (async () => {
+  const posts = await getSortedPosts()
+  return posts.map(post => {
+    // Get sequence context for the post
+    const { prev, next } = getPostSequenceContext(post, posts)
+    return {
+      params: { slug: post.id },
+      props: { post, prev, next },
+    }
+  })
+}) satisfies GetStaticPaths
+
+const { post, prev, next } = Astro.props
+const postData = post.data
+const { headings, Content: PostContent } = await render(post)
+
+const sortedPosts = await getSortedPosts()
+
+let tags: Collation<'posts'>[] | undefined
+if (postData.tags && postData.tags.length > 0) {
+  const tagsGroup = await TagsGroup.build(sortedPosts)
+  tags = tagsGroup.matchMany(postData.tags)
+}
+---
+
+<Layout
+  title={postData.title}
+  description={postData.description}
+  author={siteConfig.author}
+  tags={postData.tags}
+>
+  <article
+    class='max-w-full py-7.5'
+    data-pagefind-body
+  >
+    <div class='md:mx-2'>
+      <h1
+        id={post.id}
+        class='mb-4 text-[1.75rem] text-heading1 font-semibold'
+      >
+        # {postData.title}
+      </h1>
+      <div class='my-2 border-l-2 border-accent/80 pl-4 py-2'>
+        <PostInfo
+          post={post}
+          class='mb-1'
+        />
+        {
+          tags && (
+            <div class='mt-4'>
+              <Tags tags={tags} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+    <div class='flex flex-col xl:gap-1 2xl:gap-18 xl:flex-row xl:items-start'>
+      {postData.toc && headings.length > 0 && <TableOfContents headings={headings} />}
+      <div class='mb-5 xl:min-w-full 2xl:min-w-full prose'>
+        <PostContent />
+      </div>
+    </div>
+  </article>
+
+  {
+    (
+      <div class='flex justify-center'>
+        <a
+          href={'/blog'}
+          aria-label='Back'
+          class='button items-center justify-center'
+        >
+          <IconChevronsLeft class='mr-2 text-xl size-5' />
+          {'Back'}
+        </a>
+      </div>
+    )
+  }
+
+  <ScrollUpButton />
+</Layout>

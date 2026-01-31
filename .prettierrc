@@ -1,7 +1,17 @@
 {
   "arrowParens": "avoid",
   "jsxSingleQuote": true,
+  "printWidth": 100,
   "semi": false,
   "singleAttributePerLine": true,
-  "singleQuote": true
+  "singleQuote": true,
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }

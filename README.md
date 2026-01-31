@@ -2,29 +2,13 @@
 
 Live on https://twistezo.github.io/blog/
 
-### Requirements
+## Usage
 
-- Bundler
-
-### Install packages
-
-- `bundle install`
-
-### Build and serve
-
-- `bundle exec jekyll serve --livereload`
-- `http://127.0.0.1:4000`
-
-### Tools
-
-- run
-
-  `./tools/run.sh`
-
-- tests
-
-  `./tools/test.sh`
+- `npm install`
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
 
 ### Credits
 
-- https://github.com/cotes2020/jekyll-theme-chirpy
+- https://github.com/stelcodes/multiterm-astro
