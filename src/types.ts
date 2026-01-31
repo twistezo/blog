@@ -32,12 +32,6 @@ export interface CollationGroup<CollectionType extends keyof DataEntryMap> {
   matchMany(titles: string[]): Collation<CollectionType>[] | undefined
 }
 
-export type NavLink = {
-  name: string
-  url: string
-  external?: boolean
-}
-
 export type AdmonitionType = 'tip' | 'note' | 'important' | 'caution' | 'warning'
 
 export const themeKeys = [
@@ -115,5 +109,4 @@ export interface SiteConfig {
   trailingSlashes: boolean
   themes: ThemesConfig
   socialLinks: SocialLinks
-  navLinks: NavLink[]
 }
