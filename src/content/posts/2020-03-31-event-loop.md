@@ -1,6 +1,6 @@
 ---
 title: Asynchronous And Single-Threaded Javascript? Meet The Event Loop
-description: JavaScript is single-threaded with asynchronous behavior, allowing non-blocking execution. The event loop manages callback execution after the call stack is clear  - summarized with AI.
+description: JavaScript is single-threaded with asynchronous behavior, allowing non-blocking execution. The event loop manages callback execution after the call stack is clear.
 published: 2020-03-31
 tags: [javascript, browser]
 ---

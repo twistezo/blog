@@ -1,6 +1,6 @@
 ---
 title: The Right Way To Review Code
-description: Authors should ensure pull requests are well-prepared and self-reviewed. Reviewers must follow multiple passes to check correctness, functionality, and implementation  - summarized with AI.
+description: Authors should ensure pull requests are well-prepared and self-reviewed. Reviewers must follow multiple passes to check correctness, functionality, and implementation.
 published: 2022-02-20
 tags: [git, github, code-review]
 ---

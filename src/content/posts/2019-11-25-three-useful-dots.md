@@ -1,6 +1,6 @@
 ---
 title: Three Useful Dots - The Rest And The Spread In Javascript
-description: Rest and spread syntax in JavaScript help manage function arguments, array copying, object destructuring, and more with the use of three dots for efficiency  - summarized with AI.
+description: Rest and spread syntax in JavaScript help manage function arguments, array copying, object destructuring, and more with the use of three dots for efficiency.
 published: 2019-11-25
 tags: [javascript]
 ---

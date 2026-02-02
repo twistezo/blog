@@ -1,6 +1,6 @@
 ---
 title: OWASP Top Ten - tldr;
-description: OWASP's security risks, including broken access control, cryptographic failures, and injection, highlight the need for strong defenses like validation and encryption  - summarized with AI.
+description: OWASP's security risks, including broken access control, cryptographic failures, and injection, highlight the need for strong defenses like validation and encryption.
 published: 2024-01-29
 tags: [security]
 ---

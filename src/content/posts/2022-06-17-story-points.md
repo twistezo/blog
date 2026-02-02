@@ -1,6 +1,6 @@
 ---
 title: The Story About Points
-description: Story points estimate effort, complexity, and size, not time, using Fibonacci numbers to prioritize tasks while maintaining team focus on value delivery  - summarized with AI.
+description: Story points estimate effort, complexity, and size, not time, using Fibonacci numbers to prioritize tasks while maintaining team focus on value delivery.
 published: 2022-06-17
 tags: [scrum, story-points]
 ---

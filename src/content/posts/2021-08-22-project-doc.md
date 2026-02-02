@@ -1,6 +1,6 @@
 ---
 title: What Should Good Project Documentation Look Like?
-description: Well-documented projects improve code development, team collaboration, onboarding, and communication. Documentation types include text, diagrams, and code comments  - summarized with AI.
+description: Well-documented projects improve code development, team collaboration, onboarding, and communication. Documentation types include text, diagrams, and code comments.
 published: 2021-08-22
 tags: [documentation, scrum]
 ---

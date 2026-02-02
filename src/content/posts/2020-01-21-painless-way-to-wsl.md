@@ -1,6 +1,6 @@
 ---
 title: Painless Way To WSL 2 With Docker
-description: WSL 2 offers a real Linux kernel, better performance, and easy Docker integration. Upgrade from WSL 1 to WSL 2 with Docker requires proper cleanup and installation steps  - summarized with AI.
+description: WSL 2 offers a real Linux kernel, better performance, and easy Docker integration. Upgrade from WSL 1 to WSL 2 with Docker requires proper cleanup and installation steps.
 published: 2020-01-21
 tags: [wsl, docker]
 ---

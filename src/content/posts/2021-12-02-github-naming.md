@@ -1,6 +1,6 @@
 ---
 title: Github - Good Practices About Naming And Pull Requests
-description: Naming conventions for branches, pull requests, and labels in Jira and GitHub, focusing on organization, clarity, and consistency in task management and collaboration  - summarized with AI.
+description: Naming conventions for branches, pull requests, and labels in Jira and GitHub, focusing on organization, clarity, and consistency in task management and collaboration.
 published: 2021-12-02
 tags: [git, github]
 ---

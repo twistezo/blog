@@ -1,6 +1,6 @@
 ---
 title: How To Create Google Chrome Extension On Example Of Netflix Subtitles Styler
-description: Guide on building a Chrome extension to manipulate Netflix subtitles, allowing real-time style changes using Local Storage, background scripts, and UI components - summarized with AI.
+description: Guide on building a Chrome extension to manipulate Netflix subtitles, allowing real-time style changes using Local Storage, background scripts, and UI components.
 published: 2019-07-29
 tags: [javascript, browser]
 ---

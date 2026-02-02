@@ -1,6 +1,6 @@
 ---
 title: Scrum Workflow In A Nutshell
-description: Daily meetings are led by the team leader to discuss progress, blockers, and code review, while the workflow involves task management from backlog to release  - summarized with AI.
+description: Daily meetings are led by the team leader to discuss progress, blockers, and code review, while the workflow involves task management from backlog to release.
 published: 2022-04-03
 tags: [scrum]
 ---
