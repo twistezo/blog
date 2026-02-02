@@ -17,11 +17,12 @@ function kebabToTitleCase(str: string): string {
   id='search'
 >
   <button
-    class='hover:text-accent flex cursor-pointer items-center justify-center rounded-md'
+    class='hover:text-accent flex cursor-pointer items-center justify-center rounded-md gap-1'
     aria-keyshortcuts='Control+K Meta+K'
     data-open-modal
     disabled
   >
+    {'theme'}
     <IconPalette class='size-6 text-accent' />
     <span class='sr-only'>Select Theme</span>
   </button>
@@ -45,7 +46,7 @@ function kebabToTitleCase(str: string): string {
           siteConfig.themes.include.map(theme => (
             <li>
               <button
-                class='w-full rounded-lg py-1 px-2'
+                class='w-full rounded-lg py-1 px-2 hover:bg-accent/5'
                 data-theme={theme}
               >
                 {kebabToTitleCase(theme)}

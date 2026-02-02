@@ -10,7 +10,7 @@ const selectTheme = siteConfig.themes.mode === 'select' && siteConfig.themes.inc
 ---
 
 <header>
-  <div class='relative flex items-center justify-between bg-accent/10 rounded-xl'>
+  <div class='relative flex flex-wrap items-center justify-between bg-accent/10 rounded-xl gap-y-3'>
     <a
       id='logo'
       href='/blog'
@@ -18,14 +18,12 @@ const selectTheme = siteConfig.themes.mode === 'select' && siteConfig.themes.inc
     >
       {'/' + siteConfig.title}
     </a>
-    <div class='grow-1 pl-3'>{'' + siteConfig.description}</div>
-    <div class='flex items-center gap-3 sm:mr-3'>
-      {'find'}
+
+    <div class='grow-1 ml-3'>{'' + siteConfig.description}</div>
+
+    <div class='flex items-center gap-3 mr-3 ml-auto pb-2 sm:pb-0'>
       <Search trailingSlashes={siteConfig.trailingSlashes} />
-
-      {'theme'}
       {lightDarkAutoTheme && <LightDarkAutoButton />}
-
       {selectTheme && <SelectTheme />}
     </div>
 

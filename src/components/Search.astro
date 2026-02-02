@@ -12,11 +12,12 @@ const { trailingSlashes = false } = Astro.props
   data-trailing-slashes={trailingSlashes}
 >
   <button
-    class='hover:text-accent flex cursor-pointer items-center justify-center rounded-md'
+    class='hover:text-accent flex cursor-pointer items-center justify-center rounded-md gap-1'
     aria-keyshortcuts='Control+K Meta+K'
     data-open-modal
     disabled
   >
+    {'find'}
     <IconSearch class='size-6 text-accent' />
     <span class='sr-only'>Open Search</span>
   </button>
