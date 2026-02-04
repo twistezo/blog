@@ -1,7 +1,7 @@
 ---
 title: Utility For Easy Mapping Between DTO And OM Objects Based On Their Data Types
 description: A minimal mapDTO helper keeps DTO ↔ Object Model transformations type-safe, readable, and testable without decorators or inheritance chains.
-published: 2025-08-22
+published: 2025-04-22
 tags: [typescript, npm]
 ---
 

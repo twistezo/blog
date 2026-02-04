@@ -1,7 +1,7 @@
 ---
 title: Docker Anti-Patterns
 description: Common Docker mistakes and production-ready fixes.
-published: 2026-02-02
+published: 2026-01-12
 tags: [docker, dev-ops]
 ---
 

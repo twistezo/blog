@@ -1,7 +1,7 @@
 ---
 title: Architecture First, Apollo-To-Tanstack Migration That Delighted Business
 description: Architectural wrappers, a shared axios client, and gradual rollouts let us replace Apollo Client with TanStack Query on a large codebase without disrupting product delivery.
-published: 2026-01-06
+published: 2025-11-06
 tags: [react, graphql, typescript]
 ---
 
